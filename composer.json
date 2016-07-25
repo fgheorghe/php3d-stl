@@ -1,0 +1,24 @@
+{
+  "name": "php-3d/stl",
+  "type": "library",
+  "description": "STL file manipulation library for PHP 7",
+  "keywords": ["stl","3d", "stereolithography"],
+  "homepage": "https://github.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Grosan Flaviu Gheorghe",
+      "email": "fgheorghe@grosan.co.uk",
+      "homepage": "http://grosan.co.uk",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Stl": "src"
+    }
+  }
+}
