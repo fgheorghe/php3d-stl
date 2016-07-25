@@ -15,8 +15,7 @@
   ],
   "require": {
     "php": ">=7.0",
-    "phpunit/phpunit": "5.4.6",
-    "mockery/mockery": "0.9.5"
+    "phpunit/phpunit": "5.4.6"
   },
   "autoload": {
     "classmap": [
