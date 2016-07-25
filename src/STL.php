@@ -52,6 +52,8 @@ class STL
     /**
      * Class constructor from an STL string.
      *
+     * Example STL file string: see STLTest $stlFileString property.
+     *
      * @param string $stlFileContentString
      * @return STL
      */
@@ -84,6 +86,8 @@ class STL
 
     /**
      * Class constructor from an STL array.
+     *
+     * Example STL file array: see STLTest $stlFileArray property.
      *
      * @param array $stlFileArray
      * @return STL
