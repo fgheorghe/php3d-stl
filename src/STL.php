@@ -11,10 +11,10 @@
 namespace php3d\stl;
 
 /**
- * Class STLFileReader. Provides functionality for parsing STL files.
+ * Class STL. Provides functionality for parsing STL files.
  * @package php3d\stl
  */
-class STLFileReader
+class STL
 {
     /**
      * @var string
@@ -31,9 +31,9 @@ class STLFileReader
 
     /**
      * @param string $solidName
-     * @return STLFileReader
+     * @return STL
      */
-    public function setSolidName(string $solidName): STLFileReader
+    public function setSolidName(string $solidName): STL
     {
         $this->solidName = $solidName;
         return $this;
@@ -48,9 +48,9 @@ class STLFileReader
      * Class constructor from an STL string.
      *
      * @param string $stlFileContentString
-     * @return STLFileReader
+     * @return STL
      */
-    public static function fromString(string $stlFileContentString) : STLFileReader
+    public static function fromString(string $stlFileContentString) : STL
     {
         $class = new self();
 
@@ -66,9 +66,9 @@ class STLFileReader
      * Class constructor from an STL array.
      *
      * @param array $stlFileArray
-     * @return STLFileReader
+     * @return STL
      */
-    public static function fromArray(array $stlFileArray) : STLFileReader
+    public static function fromArray(array $stlFileArray) : STL
     {
         return new self();
     }

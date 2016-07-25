@@ -11,9 +11,9 @@
 namespace php3d\stl;
 
 /**
- * @covers STLFileReader
+ * @covers STL
  */
-class STLFileReaderTest extends \PHPUnit_Framework_TestCase
+class STLTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var string
@@ -59,22 +59,22 @@ EOT;
      */
     public function testDefaultClassConstructorIsPrivate()
     {
-        new STLFileReader();
+        new STL();
     }
 
     public function testStringConstructorReturnsSelf()
     {
         $this->assertEquals(
-            'php3d\stl\STLFileReader',
-            get_class(STLFileReader::fromString($this->stlFileString))
+            'php3d\stl\STL',
+            get_class(STL::fromString($this->stlFileString))
         );
     }
 
     public function testArrayConstructorReturnsSelf()
     {
         $this->assertEquals(
-            'php3d\stl\STLFileReader',
-            get_class(STLFileReader::fromArray($this->stlFileArray))
+            'php3d\stl\STL',
+            get_class(STL::fromArray($this->stlFileArray))
         );
     }
 
@@ -82,7 +82,7 @@ EOT;
     {
         $this->assertEquals(
             $this->solidName,
-            STLFileReader::fromString($this->stlFileString)->getSolidName()
+            STL::fromString($this->stlFileString)->getSolidName()
         );
     }
 }
