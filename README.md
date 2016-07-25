@@ -11,7 +11,7 @@ Add this to your composer.json file:
   [...]
   "require": {
       [...]
-      "php-amqplib/php-amqplib": "2.6.*"
+      "php3d/stl": "*"
   }
 ```
 
