@@ -6,9 +6,3 @@ tools:
     php_code_sniffer:
         config:
             standard: PSR2
-
-build:
-    tests:
-        override:
-            -
-                command: 'phpunit'
