@@ -146,11 +146,57 @@ class STL
         return $this;
     }
 
+    /**
+     * Deletes a facet normal at a given position.
+     *
+     * @param int $position
+     * @return STL
+     */
     public function deleteFacetNormal(int $position) : STL
     {
         $facets = $this->facets;
         unset($facets[$position]);
         $this->facets = array_values($facets);
         return $this;
+    }
+
+    /**
+     * Converts STL back to array.
+     *
+     * @return array
+     */
+    public function toArray() : array
+    {
+        $facets = array();
+        $count = $this->getFacetNormalCount();
+
+        for ($i = 0; $i < $count; $i++) {
+            $facets[] = $this->getFacetNormal($i)->toArray();
+        }
+
+        return array(
+            "name" => $this->getSolidName(),
+            "facets" => $facets
+        );
+    }
+
+    /**
+     * Converts STL back to string.
+     *
+     * @return string
+     */
+    public function toString() : string
+    {
+        $string = "solid " . $this->getSolidName() . "\n";
+
+        $count = $this->getFacetNormalCount();
+
+        for ($i = 0; $i < $count; $i++) {
+            $string .= $this->getFacetNormal($i)->toString() . "\n";
+        }
+
+        $string .= "endsolid";
+
+        return $string;
     }
 }
