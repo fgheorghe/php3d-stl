@@ -17,7 +17,7 @@ Add this to your composer.json file:
   [...]
   "require": {
       [...]
-      "php3d/stl": "*"
+      "php3d/stl": "1.*"
   }
 ```
 
