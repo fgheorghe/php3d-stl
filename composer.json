@@ -2,7 +2,7 @@
   "name": "php3d/stl",
   "type": "library",
   "description": "STL file manipulation library for PHP 7",
-  "keywords": ["stl","3d", "stereolithography"],
+  "keywords": ["stl","3d", "stereolithography", "3d printing"],
   "homepage": "https://github.com/",
   "license": "MIT",
   "authors": [
