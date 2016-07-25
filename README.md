@@ -1,4 +1,4 @@
-# php3d/stl #
+# php3d-stl #
 
 [![Build Status](https://travis-ci.org/fgheorghe/php3d-stl.svg?branch=master)](https://travis-ci.org/fgheorghe/php3d-stl)
 
