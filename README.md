@@ -3,7 +3,7 @@
 This library provides PHP 7 functionality for reading and writing from and to 3D objects stored in STereoLithography (STL) files,
 useful for manipulating 3D objects for 3D Printing.
 
-### Set-up
+## Set-up
 
 Add this to your composer.json file:
 
