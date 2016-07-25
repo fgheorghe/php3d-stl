@@ -1,5 +1,5 @@
 {
-  "name": "php-3d/stl",
+  "name": "php3d/stl",
   "type": "library",
   "description": "STL file manipulation library for PHP 7",
   "keywords": ["stl","3d", "stereolithography"],
@@ -14,11 +14,13 @@
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "phpunit/phpunit": "5.4.6",
+    "mockery/mockery": "0.9.5"
   },
   "autoload": {
-    "psr-0": {
-      "Stl": "src"
-    }
+    "classmap": [
+      "src/"
+    ]
   }
 }
