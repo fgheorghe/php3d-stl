@@ -22,6 +22,11 @@ class STL
     private $solidName;
 
     /**
+     * @var array
+     */
+    private $facets = array();
+
+    /**
      * @return string
      */
     public function getSolidName(): string
@@ -55,9 +60,24 @@ class STL
         $class = new self();
 
         // Extract name.
-        $firstLine = explode("\n", $stlFileContentString);
-        preg_match("/solid (.+)/", $firstLine[0], $matches);
+        $lines = explode("\n", $stlFileContentString);
+        preg_match("/solid (.+)/", $lines[0], $matches);
         $class->setSolidName($matches[1]);
+
+        // Extract facets.
+        foreach ($lines as $line) {
+            if (preg_match("/facet normal (.+)/", $line)) {
+                // Get this line and the following, making a block of facets.
+                $string = next($lines) . "\n";
+                $string .= next($lines) . "\n";
+                $string .= next($lines) . "\n";
+                $string .= next($lines) . "\n";
+                $string .= next($lines) . "\n";
+                $string .= next($lines) . "\n";
+                $string .= next($lines) . "\n";
+                $class->addFacetNormal(STLFacetNormal::fromString($string));
+            }
+        }
 
         return $class;
     }
@@ -70,6 +90,67 @@ class STL
      */
     public static function fromArray(array $stlFileArray) : STL
     {
-        return new self();
+        $class = new self();
+
+        $class->setSolidName($stlFileArray["name"]);
+        foreach ($stlFileArray["facets"] as $facet) {
+            $class->addFacetNormal(STLFacetNormal::fromArray($facet));
+        }
+
+        return $class;
+    }
+
+    /**
+     * Adds a new facet normal object.
+     *
+     * @param STLFacetNormal $facetNormal
+     * @return STL
+     */
+    public function addFacetNormal(STLFacetNormal $facetNormal) : STL
+    {
+        $this->facets[] = $facetNormal;
+        return $this;
+    }
+
+    /**
+     * Returns the number of facets in this STL object.
+     *
+     * @return int
+     */
+    public function getFacetNormalCount() : int
+    {
+        return count($this->facets);
+    }
+
+    /**
+     * Returns facet normal object at position.
+     *
+     * @param int $position
+     * @return STLFacetNormal
+     */
+    public function getFacetNormal(int $position) : STLFacetNormal
+    {
+        return $this->facets[$position];
+    }
+
+    /**
+     * Sets a facet normal at a given position.
+     *
+     * @param int $position
+     * @param STLFacetNormal $facetNormal
+     * @return STL
+     */
+    public function setFacetNormal(int $position, STLFacetNormal $facetNormal) : STL
+    {
+        $this->facets[$position] = $facetNormal;
+        return $this;
+    }
+
+    public function deleteFacetNormal(int $position) : STL
+    {
+        $facets = $this->facets;
+        unset($facets[$position]);
+        $this->facets = array_values($facets);
+        return $this;
     }
 }
