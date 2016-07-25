@@ -1,3 +1,5 @@
+[![Build Status][ico-travis]][link-travis]
+
 ## Synopsis
 
 This library provides PHP 7 functionality for reading and writing from and to 3D objects stored in STereoLithography (STL) files,
