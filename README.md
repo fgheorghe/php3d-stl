@@ -1,6 +1,9 @@
 # php3d-stl #
 
 [![Build Status](https://travis-ci.org/fgheorghe/php3d-stl.svg?branch=master)](https://travis-ci.org/fgheorghe/php3d-stl)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fgheorghe/php3d-stl/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fgheorghe/php3d-stl/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/fgheorghe/php3d-stl/badges/build.png?b=master)](https://scrutinizer-ci.com/g/fgheorghe/php3d-stl/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/fgheorghe/php3d-stl/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/fgheorghe/php3d-stl/?branch=master)
 
 ## Synopsis
 
