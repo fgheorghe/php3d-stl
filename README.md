@@ -1,4 +1,6 @@
-[![Build Status][ico-travis]][link-travis]
+# php3d/stl #
+
+[![Build Status](https://travis-ci.org/fgheorghe/php3d-stl.svg?branch=master)](https://travis-ci.org/fgheorghe/php3d-stl)
 
 ## Synopsis
 
