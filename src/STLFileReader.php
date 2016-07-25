@@ -40,7 +40,9 @@ class STLFileReader
     }
 
     // Class should never be instantiated directly, as it emulates constructor overloading.
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 
     /**
      * Class constructor from an STL string.
@@ -48,7 +50,8 @@ class STLFileReader
      * @param string $stlFileContentString
      * @return STLFileReader
      */
-    public static function fromString(string $stlFileContentString) : STLFileReader {
+    public static function fromString(string $stlFileContentString) : STLFileReader
+    {
         $class = new self();
 
         // Extract name.
@@ -65,7 +68,8 @@ class STLFileReader
      * @param array $stlFileArray
      * @return STLFileReader
      */
-    public static function fromArray(array $stlFileArray) : STLFileReader {
+    public static function fromArray(array $stlFileArray) : STLFileReader
+    {
         return new self();
     }
 }

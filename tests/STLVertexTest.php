@@ -25,13 +25,19 @@ EOT;
 
     private $stlVertexArray = array(
         array(
-            -71.74323, 47.70205, 4.666243
+            -71.74323,
+            47.70205,
+            4.666243
         ),
         array(
-            -72.13071, 47.70205, 4.932664
+            -72.13071,
+            47.70205,
+            4.932664
         ),
         array(
-            -72.1506, 47.2273, 4.905148
+            -72.1506,
+            47.2273,
+            4.905148
         )
     );
 
@@ -80,7 +86,8 @@ EOT;
         );
     }
 
-    public function testVertexStringIsConstructed() {
+    public function testVertexStringIsConstructed()
+    {
         $this->assertEquals(
             $this->stlVertexString,
             STLVertex::fromArray($this->stlVertexArray)->toString()

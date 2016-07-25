@@ -63,7 +63,9 @@ class STLFacetNormal
     }
 
     // Class should never be instantiated directly, as it emulates constructor overloading.
-    private function __construct() {}
+    private function __construct()
+    {
+    }
 
     /**
      * Class constructor from an STL facet normal string.
@@ -81,11 +83,13 @@ class STLFacetNormal
      * @param string $stlFacetNormalString
      * @return STLFacetNormal
      */
-    public static function fromString(string $stlFacetNormalString) : STLFacetNormal {
+    public static function fromString(string $stlFacetNormalString) : STLFacetNormal
+    {
         $class = new self();
 
-        preg_match("/facet normal +(\-*\d+\.*\d*e*\-*\+*\d*) +(\-*\d+\.*\d*e*\-*\+*\d*) +(\-*\d+\.*\d*e*\-*\+*\d*)/", $stlFacetNormalString, $matches);
-        $class->setCoordinatesArray(array( (float) $matches[1], (float) $matches[2], (float) $matches[3] ));
+        preg_match("/facet normal +(\-*\d+\.*\d*e*\-*\+*\d*) +(\-*\d+\.*\d*e*\-*\+*\d*) +(\-*\d+\.*\d*e*\-*\+*\d*)/",
+            $stlFacetNormalString, $matches);
+        $class->setCoordinatesArray(array((float)$matches[1], (float)$matches[2], (float)$matches[3]));
 
         $lines = explode("\n", $stlFacetNormalString);
         $vertex = "";
@@ -119,7 +123,8 @@ class STLFacetNormal
      * @param array $stlFacetNormalArray
      * @return STLFacetNormal
      */
-    public static function fromArray(array $stlFacetNormalArray) : STLFacetNormal {
+    public static function fromArray(array $stlFacetNormalArray) : STLFacetNormal
+    {
         $class = new self();
         $class->setCoordinatesArray($stlFacetNormalArray["coordinates"]);
         $class->setVertex(STLVertex::fromArray($stlFacetNormalArray["vertex"]));

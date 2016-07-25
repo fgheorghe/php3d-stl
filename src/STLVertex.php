@@ -65,9 +65,9 @@ class STLVertex
             $stlVertexString, $matches);
 
         $coordinates = array(
-            array((float) $matches[1][0], (float) $matches[2][0], (float) $matches[3][0]),
-            array((float) $matches[1][1], (float) $matches[2][1], (float) $matches[3][1]),
-            array((float) $matches[1][2], (float) $matches[2][2], (float) $matches[3][2])
+            array((float)$matches[1][0], (float)$matches[2][0], (float)$matches[3][0]),
+            array((float)$matches[1][1], (float)$matches[2][1], (float)$matches[3][1]),
+            array((float)$matches[1][2], (float)$matches[2][2], (float)$matches[3][2])
         );
 
         $class->setCoordinatesArray($coordinates);
