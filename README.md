@@ -26,13 +26,16 @@ composer.phar install
 Read an STL file:
 
 ```PHP
-STL::fromString(file_get_contents("/path/to/file.stl"));
+use php3d\stl\STL;
+use php3d\stl\STLFacetNormal;
+
+$stl = STL::fromString(file_get_contents("/path/to/file.stl"));
 ```
 
 Add a new facet:
 
 ```PHP
-STL::addFacetNormal(STLFacetNormal::fromArray(array(
+$stl->addFacetNormal(STLFacetNormal::fromArray(array(
     "coordinates" => array( 1, 2, 3), // Facet normal coordinates.
     "vertex" => array(
         array(
@@ -51,5 +54,5 @@ STL::addFacetNormal(STLFacetNormal::fromArray(array(
 Write back to file:
 
 ```PHP
-file_put_contents("/path/to/file.stl", STL::toString());
+file_put_contents("/path/to/file.stl", $stl->toString());
 ```
