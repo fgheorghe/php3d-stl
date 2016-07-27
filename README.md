@@ -57,6 +57,12 @@ $stl->addFacetNormal(STLFacetNormal::fromArray(array(
 )));
 ```
 
+To split an object:
+
+```PHP
+(new STLSplit($stl))->split();
+```
+
 Write back to file:
 
 ```PHP
