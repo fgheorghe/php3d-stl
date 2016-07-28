@@ -48,7 +48,7 @@ class STLSplit {
     }
 
     /**
-     * Splits an STL object into 3, and returns the new 3D objects in an array of STL files.
+     * Splits an STL object and returns the new 3D objects in an array of STL files.
      *
      * @return array
      */
